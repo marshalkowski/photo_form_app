@@ -1,5 +1,5 @@
 django
 gunicorn
 django-heroku
-requests==2.2.1
+requests==2.20.0
 vinlib==0.7.14dev
