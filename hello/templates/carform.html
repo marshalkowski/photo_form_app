@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div>
+  <h2>Let's make sure everything looks correct.</h2>
+
+  <form action="/quote/" method="post">
+  	  {% csrf_token %}
+	  <label for="first_name">First name: </label>
+	  <input id="first_name" type="text" name="first_name" value="{{ user_first_name }}" required>
+
+	  <label for="last_name">Last name: </label>
+	  <input id="last_name" type="text" name="last_name" value="{{ user_last_name }}" required>
+
+	  <label for="dob">DOB: </label>
+	  <input id="dob" type="text" name="dob" value="{{ user_dob }}">
+
+	  <label for="address">Address: </label>
+	  <input id="address" type="text" name="address" value="{{ user_address }}">
+
+	  <input type="submit" value="All set">
+  </form>
+
+</div>
+{% endblock %}

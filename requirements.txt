@@ -1,0 +1,5 @@
+django
+gunicorn
+django-heroku
+requests==2.2.1
+vinlib==0.7.14dev

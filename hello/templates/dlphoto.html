@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div style="margin: 10px auto; text-align: center">
+  <h1>First, let's get some info from your driver's license.</h1>
+
+  <form action="/postdlphoto/" method="post" enctype="multipart/form-data">
+  	  {% csrf_token %}
+	  <p></p>
+	  <div class="form-group" style="margin: auto; width: 25%;">
+	    <input type="file" class="form-control-file" name="dl_picture" accept="image/*;capture=camera" required>
+	  </div>
+	  <p></p>
+	  <button type="submit" class="btn btn-primary" style="margin: 20px auto">Ok, what's next?</button>
+
+  </form>
+
+  <a href="/regphoto/" class="btn btn-primary">I don't have my license on me</a>
+
+</div>
+{% endblock %}

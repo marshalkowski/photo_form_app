@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div style="margin: 10px auto; text-align: center">
+  <h2>Here's your quote:</h2>
+  <h1>${{ yourquote }}/month</h1>
+
+  <a href="http://thehartford.com"><button class="btn btn-primary">Sign up for a policy</button></a>
+
+  <h2>Want an even more accurate quote (and even more savings)?</h2>
+  <h3>Fill in some additional details</h3>
+
+  <form action="/updatedquote/" method="post">
+  	  {% csrf_token %}
+	  <label for="gpa">GPA (if applicable): </label>
+	  <input id="gpa" type="text" name="gpa" value="{{ user_gpa }}">
+<p></p>
+	  <label for="defense">Defensive Driving Course? </label>
+	  <input id="defense" type="checkbox" name="defense" value="{{ user_defense }}">
+	  <label for="defense_date">Date completed: </label>
+	  <input id="defense_date" type="text" name="defense_date" value="{{ user_defense_date }}">
+<p></p>
+	  <label for="bundle">Bundle Discount </label>
+	  <input id="bundle" type="checkbox" name="bundle" value="{{ user_bundle }}">
+<p></p>
+	  <input type="submit" class="btn btn-primary" value="Get an updated quote">
+  </form>
+
+  <h2>Here are some other services you might be interested in from The Hartford.</h2>
+  <ul style="list-style: none">
+  	<li>Renter's Insurance</li>
+  	<li>Condo Insurance</li>
+  	<li>Flood Insurance</li>
+  	<li>Umbrella Insurance</li>
+  </ul>
+
+</div>
+{% endblock %}

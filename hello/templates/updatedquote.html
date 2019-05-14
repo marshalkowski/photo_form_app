@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div style="margin: 10px auto; text-align: center">
+  <h2>Your updated savings:</h2>
+  <h1>${{ yournewquote }}/month</h1>
+
+  <a href="http://thehartford.com"><button class="btn btn-primary">Sign up for a policy</button></a>
+
+  <h2>Here are some other services you might be interested in from The Hartford.</h2>
+  <ul style="list-style: none">
+  	<li>Renter's Insurance</li>
+  	<li>Condo Insurance</li>
+  	<li>Flood Insurance</li>
+  	<li>Umbrella Insurance</li>
+  </ul>
+
+</div>
+{% endblock %}

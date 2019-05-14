@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div style="margin: 10px auto; text-align: center">
+  <h2>Let's make sure everything looks correct.</h2>
+
+  <form action="/postuserform/" method="post">
+  	  {% csrf_token %}
+	  <label for="first_name">First name: </label>
+	  <input id="first_name" type="text" name="first_name" value="{{ user_first_name }}" required>
+	<p></p>
+	  <label for="middle_init">Middle initial: </label>
+	  <input id="middle_init" type="text" name="middle_init" value="{{ user_middle_init }}" required>
+<p></p>
+	  <label for="last_name">Last name: </label>
+	  <input id="last_name" type="text" name="last_name" value="{{ user_last_name }}" required>
+<p></p>
+	  <label for="dob">Date of Birth: </label>
+	  <input id="dob" type="text" name="dob" value="{{ user_dob }}" required>
+<p></p>
+	  <label for="address">Address: </label>
+	  <input id="address" type="text" name="address" value="{{ user_address }}" required>
+<p></p>
+	  <label for="make">Make: </label>
+	  <input id="make" type="text" name="make" value="{{ user_make }}" required>
+<p></p>
+	  <label for="model">Model: </label>
+	  <input id="model" type="text" name="model" value="{{ user_model }}" required>
+<p></p>
+	  <label for="year">Year: </label>
+	  <input id="year" type="text" name="year" value="{{ user_year }}" required>
+<p></p>
+	  <label for="vin">VIN #: </label>
+	  <input id="vin" type="text" name="vin" value="{{ user_vin }}" required>
+<p></p>
+	  <input type="submit" class="btn btn-primary" value="Looks good!">
+  </form>
+
+</div>
+{% endblock %}
